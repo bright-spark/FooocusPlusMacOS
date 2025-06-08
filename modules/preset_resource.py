@@ -24,14 +24,14 @@ def find_preset_file(preset):
     else:
         preset_json = f'{preset}.json'
     preset_file = ''
-    preset_path = Path('.\presets')
+    preset_path = Path('presets')
     for preset_file in preset_path.rglob(preset_json):
-      if not preset_file:
-        print(f'Could not find the {preset} preset')
-        print()
-        return {}
-    AR.preset_file = preset_file # used to guarantee use of SD1.5 AR template
-    return preset_file
+        if preset_file.exists():
+            AR.preset_file = str(preset_file)  # used to guarantee use of SD1.5 AR template
+            return str(preset_file)
+    print(f'Could not find the {preset} preset')
+    print()
+    return ''
 
 def find_preset_category(preset):
     global preset_file
@@ -42,13 +42,12 @@ def find_preset_category(preset):
 category_selection = find_preset_category(current_preset)
 
 def get_preset_paths():              # called by update_files() in modules.config
-    preset_path = Path('.\presets')  # also used to check if preset files exist
+    preset_path = Path('presets')    # also used to check if preset files exist
     presets = list(preset_path.rglob('*.json'))
-    if not [presets]:
+    if not presets:
         print('No presets found')
-        presets = ['initial']
-        return presets
-    return presets
+        return ['initial']
+    return [str(p) for p in presets]  # Convert Path objects to strings
 
 def get_random_preset_and_category():
     presets = get_preset_paths()

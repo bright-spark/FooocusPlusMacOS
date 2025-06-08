@@ -64,39 +64,53 @@ def get_random_preset_and_category():
 def get_presets_in_folder(arg_folder_name):
     if not arg_folder_name:
         arg_folder_name = category_selection
-    if arg_folder_name == '.\presets':
-        arg_folder_name = ''
     presets_in_folder = []
-    if os.path.basename(os.path.dirname(arg_folder_name)) == 'presets':
-        folder_name = Path(arg_folder_name)
+    
+    # Handle the case where we want all presets
+    if arg_folder_name in ['', '.', 'presets', '.\\presets', './presets']:
+        folder_name = Path('presets')
     else:
-        folder_name = Path(f'.\presets\{arg_folder_name}')
-    if os.path.exists(folder_name):
-        presets_in_folder = list(folder_name.rglob('*.json'))
+        # Handle both full paths and relative paths
+        if os.path.isabs(arg_folder_name):
+            folder_name = Path(arg_folder_name)
+        else:
+            # Handle both Windows and Unix-style paths
+            folder_name = Path('presets') / arg_folder_name
+    
+    # Ensure the path is absolute and normalized
+    folder_name = folder_name.absolute()
+    
+    if folder_name.exists() and folder_name.is_dir():
+        # Find all JSON files in the directory
+        presets_in_folder = list(folder_name.glob('*.json'))
+        
+        # If no JSON files found in the specific folder, try subdirectories
+        if not presets_in_folder and folder_name.name == 'presets':
+            presets_in_folder = list(folder_name.rglob('*.json'))
+            
         if not presets_in_folder:
-            print(f'Could not find presets in the {arg_folder_name} folder.')
-            print()
+            print(f'Could not find any .json presets in the {folder_name} folder.')
     else:
-        print(f'Could not find the {arg_folder_name} folder.')
-        print()
-    return presets_in_folder
+        print(f'Could not find the folder: {folder_name}')
+    
+    return [str(p) for p in presets_in_folder]  # Return as strings for compatibility
 
 def get_presetnames_in_folder(folder_name):
     presetnames_in_folder = []
     if folder_name == 'All':
-        folder_name = '.\presets'
+        folder_name = 'presets'
     presets_in_folder = get_presets_in_folder(folder_name)
     if presets_in_folder:
         for preset_file in presets_in_folder:
             presetname = Path(preset_file)
             presetnames_in_folder.append(presetname.stem)
-        if folder_name == '.\presets': # if we are listing files in all folders
+        if folder_name == 'presets':  # if we are listing files in all folders
             temp_set = set(presetnames_in_folder)    # then remove duplicates
             presetnames_in_folder = sorted(temp_set) # now convert back to a list
     return presetnames_in_folder
 
 def get_all_presetnames():
-    return get_presetnames_in_folder('.\presets')
+    return get_presetnames_in_folder('presets')
 
 def set_category_selection(arg_category_selection):
     global category_selection

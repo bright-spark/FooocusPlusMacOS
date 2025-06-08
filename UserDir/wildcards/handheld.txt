@@ -1,0 +1,26 @@
+ball
+book
+bottle
+bouquet of flowers
+candle
+cane
+cup of coffee
+cup of tea
+fan
+fruit
+gun
+hat
+lamp
+lantern
+musical instrument
+plushy
+sceptre
+small pet
+snack
+sword
+sword and shield
+spear
+staff
+tankard
+torch
+wineglass

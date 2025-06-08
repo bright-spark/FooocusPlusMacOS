@@ -1,0 +1,36 @@
+{
+    "default_model": "v1-5-pruned-emaonly",
+    "model_path": "/Users/me/FooocusPlus/UserDir/models/checkpoints/v1-5-pruned-emaonly.safetensors",
+    "vae_path": "stabilityai/sd-vae-ft-mse",
+    "clip_model_path": "/Users/me/FooocusPlus/UserDir/models/clip_vision/clip-vit-large-patch14",
+    "performance_settings": {
+        "use_fp16": false,
+        "enable_attention_slicing": true,
+        "attention_slice_size": "auto",
+        "enable_xformers": false,
+        "enable_tf32": true,
+        "enable_vae_slicing": true,
+        "enable_vae_tiling": false,
+        "enable_model_cpu_offload": true,
+        "enable_sequential_cpu_offload": true
+    },
+    "memory_settings": {
+        "max_memory_allocated": 2048,
+        "max_memory_reserved": 2048,
+        "max_cpu_memory_allocated": 8192,
+        "max_cpu_memory_reserved": 8192
+    },
+    "generation_settings": {
+        "width": 512,
+        "height": 512,
+        "num_inference_steps": 20,
+        "guidance_scale": 7.5,
+        "num_images_per_prompt": 1
+    },
+    "ui_settings": {
+        "disable_metadata": true,
+        "disable_image_log": true,
+        "disable_preset_download": true,
+        "disable_enhance_output_sorting": true
+    }
+}

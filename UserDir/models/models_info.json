@@ -1,0 +1,65 @@
+{
+    "loras/SDXLFaeTastic2400.safetensors": {
+        "size": 456496700,
+        "hash": "",
+        "file": [
+            "/Users/me/FooocusPlus/UserDir/models/loras/SDXLFaeTastic2400.safetensors"
+        ],
+        "muid": "",
+        "url": ""
+    },
+    "checkpoints/v1-5-pruned-emaonly.safetensors": {
+        "size": 4265146304,
+        "hash": "",
+        "file": [
+            "/Users/me/FooocusPlus/UserDir/models/checkpoints/v1-5-pruned-emaonly.safetensors"
+        ],
+        "muid": "",
+        "url": ""
+    },
+    "checkpoints/elsewhereXL_v10.safetensors": {
+        "size": 4265146304,
+        "hash": "",
+        "file": [
+            "/Users/me/FooocusPlus/UserDir/models/checkpoints/elsewhereXL_v10.safetensors"
+        ],
+        "muid": "",
+        "url": ""
+    },
+    "checkpoints/realisticStockPhoto_v20.safetensors": {
+        "size": 6938054242,
+        "hash": "f99f3dec38a09b4834a4a073bdc45aabd42b422b4d327f5e8001afcb5ffb5f45",
+        "file": [
+            "/Users/me/FooocusPlus/UserDir/models/checkpoints/realisticStockPhoto_v20.safetensors"
+        ],
+        "muid": "5d99d6fc4fbf",
+        "url": ""
+    },
+    "checkpoints/sd_xl_base_1.0_0.9vae.safetensors": {
+        "size": 6938078334,
+        "hash": "e6bb9ea85bbf7bf6478a7c6d18b71246f22e95d41bcdd80ed40aa212c33cfeff",
+        "file": [
+            "/Users/me/FooocusPlus/UserDir/models/checkpoints/sd_xl_base_1.0_0.9vae.safetensors"
+        ],
+        "muid": "5e756477ea9d",
+        "url": ""
+    },
+    "checkpoints/v2-1_768-ema-pruned.safetensors": {
+        "size": 5214604494,
+        "hash": "",
+        "file": [
+            "/Users/me/FooocusPlus/UserDir/models/checkpoints/v2-1_768-ema-pruned.safetensors"
+        ],
+        "muid": "",
+        "url": ""
+    },
+    "loras/SDXL_FILM_PHOTOGRAPHY_STYLE_V1.safetensors": {
+        "size": 912593164,
+        "hash": "9e2a98e1f27dbdbb0bda11523dee3444df099599bff7471c6e557f6ad55f27eb",
+        "file": [
+            "/Users/me/FooocusPlus/UserDir/models/loras/SDXL_FILM_PHOTOGRAPHY_STYLE_V1.safetensors"
+        ],
+        "muid": "b39d197db0",
+        "url": ""
+    }
+}

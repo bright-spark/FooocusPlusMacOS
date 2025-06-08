@@ -1,0 +1,24 @@
+{
+    "default_model": "runwayml/stable-diffusion-v1-5",
+    "low_vram_model": "runwayml/stable-diffusion-v1-5",
+    "vae_model": "stabilityai/sd-vae-ft-mse",
+    "clip_model": "openai/clip-vit-large-patch14",
+    "safety_checker": "CompVis/stable-diffusion-safety-checker",
+    "optimization_settings": {
+        "use_fp16": false,
+        "enable_attention_slicing": true,
+        "attention_slice_size": "auto",
+        "enable_xformers": false,
+        "enable_tf32": true,
+        "enable_vae_slicing": true,
+        "enable_vae_tiling": false,
+        "enable_model_cpu_offload": true,
+        "enable_sequential_cpu_offload": true
+    },
+    "memory_settings": {
+        "max_memory_allocated": 4096,
+        "max_memory_reserved": 4096,
+        "max_cpu_memory_allocated": 12288,
+        "max_cpu_memory_reserved": 12288
+    }
+}
